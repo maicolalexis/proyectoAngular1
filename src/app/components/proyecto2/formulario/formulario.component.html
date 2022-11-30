@@ -1,0 +1,20 @@
+<div class="jumbotron mt-5 bg-dark">
+  <h2 class="titulo-jumbotron">filtra noticias por pais y categorias</h2>
+  <!--llama a la funcion cuando se presionam el boton submit-->
+  <form (ngSubmit)="buscarNoticia()">
+    <div class="form-group">
+      <!--ngModel directiva para obtener los valores
+        ngModelOptions directiva para el comportamiento de ngModel
+      -->
+      <select bane="categorias" [ngModelOptions]="{standalone: true}" [(ngModel)]="categoriaSeleccionada" class="form-control">
+        <option value="{{categoria.value}}" *ngFor="let categoria of categorias">{{categoria.nombre}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <select name="paises" [ngModelOptions]="{standalone: true}" [(ngModel)]="paisSeleccionado" class="form-control">
+        <option  [value]="pais.value" *ngFor="let pais of paises">{{pais.nombre}}</option>
+      </select>
+    </div>
+    <button class="btn btn-primary btn-block btn-lg" type="submit">Buscar</button>
+  </form>
+</div>

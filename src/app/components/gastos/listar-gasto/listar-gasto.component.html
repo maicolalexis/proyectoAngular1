@@ -1,0 +1,22 @@
+<h4 class="text-center">listado de gastos</h4>
+<hr>
+<div class="row">
+  <div class="col-lg-6">
+    <p style="font-size: 12px;">presupuesto <strong>${{ presupuesto }}</strong></p>
+  </div>
+  <div class="col-lg-6">
+    <p style="font-size: 12px;">restante <strong>${{ restante }}</strong></p>
+  </div>
+</div>
+<div class="row">
+  <ul class="list-group list-group-flush">
+    <li *ngFor="let gasto of listarGastos">
+      <strong>
+        {{gasto.nombre}}
+      </strong>
+      <strong>
+        {{gasto.cantidad}}
+      </strong>
+    </li>
+  </ul>
+</div>

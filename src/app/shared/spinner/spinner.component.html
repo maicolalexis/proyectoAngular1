@@ -1,0 +1,15 @@
+
+<!--se le pasa una variable titulo que va a contener ese valor-->
+<app-navbar [titulo]="'Buscador de Noticias'"></app-navbar>
+  <div class="container">
+    <!--llamada la variable parametrosSeleccionados y toma los valores que se extraen  de la funcion buscarNoticias-->
+    <app-formulario (parametrosSeleccionados)="buscarNoticias($event)"></app-formulario>
+    <!--se pasa los valores de la variable listNoticia-->
+    <app-listado-noticias [listNoticias]="listNoticias"></app-listado-noticias>
+  </div>
+  <div *ngIf="loading" class="spinner">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+  </div>
+
